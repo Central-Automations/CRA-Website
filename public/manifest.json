@@ -1,0 +1,15 @@
+{
+  "short_name": "Central Automations",
+  "name": "Central Automations - B2B Lead Generation",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0D1B2A",
+  "background_color": "#F5F7FA"
+}
