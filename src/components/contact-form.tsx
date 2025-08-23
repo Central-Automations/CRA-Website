@@ -27,11 +27,11 @@ export default function ContactForm() {
         </p>
 
         {/* Calendly inline widget begin */}
-        <div>
+        <div
           className="calendly-inline-widget"
           data-url="https://calendly.com/rashid-centralautomations/discovery?hide_event_type_details=1"
           style={{ minWidth: "320px", height: "700px" }}
-          data-testid="calendly-widget"
+          data-testid="calendly-widget">
         {/* Calendly inline widget end */}
     
       </div>
