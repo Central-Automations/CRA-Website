@@ -31,9 +31,8 @@ export default function ContactForm() {
           className="calendly-inline-widget"
           data-url="https://calendly.com/rashid-centralautomations/discovery?hide_event_type_details=1"
           style={{ minWidth: "320px", height: "700px" }}
-          data-testid="calendly-widget">
+          data-testid="calendly-widget"></div>
         {/* Calendly inline widget end */}
-    
       </div>
     </section>
   );
