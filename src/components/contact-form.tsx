@@ -9,34 +9,44 @@ declare global {
 
 export default function ContactForm() {
   useEffect(() => {
-    // Load Cal.com script if it hasn't been loaded yet
-    if (!document.querySelector('script[src="https://app.cal.com/embed/embed.js"]')) {
+    const existingScript = document.querySelector<HTMLScriptElement>(
+      'script[src="https://app.cal.com/embed/embed.js"]'
+    );
+
+    function initCal() {
+      if (window.Cal) {
+        window.Cal("init", "discovery", { origin: "https://app.cal.com" });
+
+        window.Cal.ns.discovery("inline", {
+          elementOrSelector: "#my-cal-inline-discovery",
+          config: { layout: "month_view", theme: "light" },
+          calLink: "central-automations/discovery",
+        });
+
+        window.Cal.ns.discovery("ui", {
+          theme: "light",
+          cssVarsPerTheme: {
+            light: { "cal-brand": "#ff7200" },
+            dark: { "cal-brand": "#ff7200" },
+          },
+          hideEventTypeDetails: true,
+          layout: "month_view",
+        });
+      }
+    }
+
+    if (!existingScript) {
       const script = document.createElement("script");
       script.src = "https://app.cal.com/embed/embed.js";
       script.async = true;
       script.onload = () => {
-        if (window.Cal) {
-          // Initialize Cal.com embed after script is loaded
-          window.Cal("init", "discovery", { origin: "https://app.cal.com" });
-
-          window.Cal.ns.discovery("inline", {
-            elementOrSelector: "#my-cal-inline-discovery",
-            config: { layout: "month_view", theme: "light" },
-            calLink: "central-automations/discovery",
-          });
-
-          window.Cal.ns.discovery("ui", {
-            theme: "light",
-            cssVarsPerTheme: {
-              light: { "cal-brand": "#ff7200" },
-              dark: { "cal-brand": "#ff7200" },
-            },
-            hideEventTypeDetails: true,
-            layout: "month_view",
-          });
-        }
+        // Delay slightly to ensure Cal.com is ready
+        setTimeout(initCal, 100);
       };
       document.body.appendChild(script);
+    } else {
+      // Script already loaded → just init
+      setTimeout(initCal, 100);
     }
   }, []);
 
@@ -53,8 +63,8 @@ export default function ContactForm() {
 
         {/* Cal.com inline widget begin */}
         <div
-          style={{ width: "100%", height: "700px", overflow: "scroll" }}
           id="my-cal-inline-discovery"
+          style={{ width: "100%", minHeight: "700px", overflow: "auto" }}
           data-testid="calcom-widget"
         ></div>
         {/* Cal.com inline widget end */}
