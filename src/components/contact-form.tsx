@@ -1,11 +1,18 @@
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    Cal: any;
+  }
+}
+
 export default function ContactForm() {
   useEffect(() => {
     // Load Cal.com script if it hasn't been loaded yet
     if (!window.Cal) {
-      (function (C, A, L) { 
-        let p = function (a, ar) { a.q.push(ar); }; 
+      // @ts-ignore - Cal.com embed script
+      (function (C: any, A: any, L: any) { 
+        let p = function (a: any, ar: any) { a.q.push(ar); }; 
         let d = C.document; 
         C.Cal = C.Cal || function () { 
           let cal = C.Cal; 
