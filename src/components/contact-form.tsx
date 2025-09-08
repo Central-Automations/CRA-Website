@@ -1,5 +1,12 @@
 import { useEffect } from "react";
 
+// Extend the Window type so TypeScript knows about Cal
+declare global {
+  interface Window {
+    Cal?: any;
+  }
+}
+
 export default function ContactForm() {
   useEffect(() => {
     // Load Cal.com script if it hasn't been loaded yet
