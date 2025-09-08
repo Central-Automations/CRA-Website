@@ -2,15 +2,33 @@ import { useEffect } from "react";
 
 export default function ContactForm() {
   useEffect(() => {
-    // Load Calendly script if it hasn't been loaded yet
-    if (
-      !document.querySelector(
-        'script[src="https://assets.calendly.com/assets/external/widget.js"]',
-      )
-    ) {
+    // Load Cal.com script if it hasn't been loaded yet
+    if (!document.querySelector('script[src="https://app.cal.com/embed/embed.js"]')) {
       const script = document.createElement("script");
-      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.src = "https://app.cal.com/embed/embed.js";
       script.async = true;
+      script.onload = () => {
+        if (window.Cal) {
+          // Initialize Cal.com embed after script is loaded
+          window.Cal("init", "discovery", { origin: "https://app.cal.com" });
+
+          window.Cal.ns.discovery("inline", {
+            elementOrSelector: "#my-cal-inline-discovery",
+            config: { layout: "month_view", theme: "light" },
+            calLink: "central-automations/discovery",
+          });
+
+          window.Cal.ns.discovery("ui", {
+            theme: "light",
+            cssVarsPerTheme: {
+              light: { "cal-brand": "#ff7200" },
+              dark: { "cal-brand": "#ff7200" },
+            },
+            hideEventTypeDetails: true,
+            layout: "month_view",
+          });
+        }
+      };
       document.body.appendChild(script);
     }
   }, []);
@@ -26,13 +44,13 @@ export default function ContactForm() {
           our team to explore how we can help grow your recruitment agency.
         </p>
 
-        {/* Calendly inline widget begin */}
+        {/* Cal.com inline widget begin */}
         <div
-          className="calendly-inline-widget"
-          data-url="https://calendly.com/rashid-centralautomations/discovery?hide_event_type_details=1"
-          style={{ minWidth: "320px", height: "700px" }}
-          data-testid="calendly-widget"></div>
-        {/* Calendly inline widget end */}
+          style={{ width: "100%", height: "700px", overflow: "scroll" }}
+          id="my-cal-inline-discovery"
+          data-testid="calcom-widget"
+        ></div>
+        {/* Cal.com inline widget end */}
       </div>
     </section>
   );
