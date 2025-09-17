@@ -25,12 +25,12 @@ export default function HeroSection() {
               Generate <span className="text-brand-secondary">Quality Leads</span> for Your Recruitment Agency
             </h1>
             <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed" data-testid="hero-subheading">
-              We help recruitment agencies build predictable lead pipelines through targeted outreach, 
-              lead research, and appointment setting. Focus on what you do best while we fill your calendar.
+              We help recruitment agencies build predictable lead pipelines through targeted email campaigns 
+              and lead research. We find interested prospects and forward their responses directly to you.
             </p>
             <div className="flex justify-center">
               <Button 
-                onClick={scrollToContact}
+                onClick={() => window.open("https://cal.com/central-automations/discovery", "_blank")}
                 className="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg"
                 data-testid="button-get-leads"
               >

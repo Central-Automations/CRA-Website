@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Users, Mail, Handshake, Check } from "lucide-react";
+import { Users, Mail, MessageSquare, Check } from "lucide-react";
 
 export default function ServicesSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -72,17 +72,17 @@ export default function ServicesSection() {
           {/* Service Card 3 */}
           <div className={`service-card bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 delay-200 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} data-testid="service-appointment-setting">
             <div className="w-16 h-16 bg-brand-primary/10 rounded-xl flex items-center justify-center mb-6">
-              <Handshake className="h-8 w-8 text-brand-primary" />
+              <MessageSquare className="h-8 w-8 text-brand-primary" />
             </div>
-            <h3 className="text-2xl font-bold text-brand-primary mb-4">Appointment Setting</h3>
+            <h3 className="text-2xl font-bold text-brand-primary mb-4">Response Management</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              We handle the appointment setting process by sharing your calendar booking link with qualified prospects. 
-              You focus on closing while we fill your pipeline.
+              We monitor email responses and forward interested prospects directly to you with context and qualification notes. 
+              You receive warm leads ready for immediate follow-up.
             </p>
             <ul className="space-y-2 text-gray-600">
-              <li className="flex items-center"><Check className="h-4 w-4 text-brand-secondary mr-2" /> Booking link sharing</li>
-              <li className="flex items-center"><Check className="h-4 w-4 text-brand-secondary mr-2" /> Prospect qualification</li>
-              <li className="flex items-center"><Check className="h-4 w-4 text-brand-secondary mr-2" /> Follow-up sequences</li>
+              <li className="flex items-center"><Check className="h-4 w-4 text-brand-secondary mr-2" /> Response monitoring</li>
+              <li className="flex items-center"><Check className="h-4 w-4 text-brand-secondary mr-2" /> Lead qualification</li>
+              <li className="flex items-center"><Check className="h-4 w-4 text-brand-secondary mr-2" /> Direct forwarding</li>
             </ul>
           </div>
         </div>

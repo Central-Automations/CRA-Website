@@ -4,7 +4,6 @@ import AboutSection from "../components/about-section";
 import ServicesSection from "../components/services-section";
 import ProcessSection from "../components/process-section";
 import CTASection from "../components/cta-section";
-import ContactForm from "../components/contact-form";
 import Footer from "../components/footer";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <ServicesSection />
       <ProcessSection />
       <CTASection />
-      <ContactForm />
       <Footer />
     </div>
   );
