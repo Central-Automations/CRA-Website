@@ -23,12 +23,6 @@ export default function CTASection() {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section
@@ -62,7 +56,7 @@ export default function CTASection() {
         </p>
         <div className="flex justify-center">
           <Button
-            onClick={scrollToContact}
+            onClick={() => window.open("https://cal.com/central-automations/discovery", "_blank")}
             className="bg-brand-accent hover:bg-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:-translate-y-1"
             data-testid="button-strategy-call"
           >

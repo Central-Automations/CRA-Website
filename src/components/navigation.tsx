@@ -48,7 +48,7 @@ export default function Navigation() {
                 Process
               </button>
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => window.open("https://cal.com/central-automations/discovery", "_blank")}
                 className="btn-primary text-white px-6 py-2 rounded-full font-medium"
                 data-testid="nav-cta"
               >
@@ -95,7 +95,7 @@ export default function Navigation() {
                 Process
               </button>
               <Button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => window.open("https://cal.com/central-automations/discovery", "_blank")}
                 className="btn-primary text-white px-6 py-2 rounded-full font-medium mx-3 mt-2"
                 data-testid="mobile-nav-cta"
               >

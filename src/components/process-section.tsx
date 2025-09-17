@@ -29,7 +29,7 @@ export default function ProcessSection() {
             How It Works
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto" data-testid="process-description">
-            Our streamlined 3-step process delivers qualified appointments to your calendar
+            Our streamlined 3-step process delivers qualified leads directly to your inbox
           </p>
         </div>
         
@@ -71,10 +71,10 @@ export default function ProcessSection() {
             <div className="w-20 h-20 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">
               3
             </div>
-            <h3 className="text-xl font-bold text-brand-primary mb-4">Qualified Appointments</h3>
+            <h3 className="text-xl font-bold text-brand-primary mb-4">Response Forwarding</h3>
             <p className="text-gray-600 leading-relaxed">
-              We qualify interested prospects and share your booking link for them to schedule appointments directly. 
-              You receive qualified leads ready to discuss their recruitment needs.
+              We monitor responses and forward interested prospects directly to you with context and qualification notes. 
+              You receive warm leads ready for immediate follow-up and conversion.
             </p>
           </div>
         </div>

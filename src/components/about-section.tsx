@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Search, Settings, CalendarCheck } from "lucide-react";
+import { Search, Settings, Forward } from "lucide-react";
 
 export default function AboutSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,11 +58,11 @@ export default function AboutSection() {
           
           <div className={`text-center transition-all duration-800 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`} data-testid="feature-appointments">
             <div className="w-20 h-20 bg-brand-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CalendarCheck className="h-8 w-8 text-brand-primary" />
+              <Forward className="h-8 w-8 text-brand-primary" />
             </div>
-            <h3 className="text-xl font-semibold text-brand-primary mb-4">Qualified Appointments</h3>
+            <h3 className="text-xl font-semibold text-brand-primary mb-4">Qualified Lead Responses</h3>
             <p className="text-gray-600 leading-relaxed">
-              We deliver pre-qualified appointments directly to your calendar, ready for you to close and convert into clients.
+              We forward interested prospect responses directly to you, pre-screened and ready for you to follow up and convert into clients.
             </p>
           </div>
         </div>
